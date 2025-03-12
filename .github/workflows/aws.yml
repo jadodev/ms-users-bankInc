@@ -7,10 +7,10 @@ on:
 env:
   AWS_REGION: us-east-1                   # Ajusta según tu región
   ECR_REPOSITORY: users   # Nombre del repositorio en ECR
-  ECS_SERVICE: CardsService                  # Nombre del servicio ECS
+  ECS_SERVICE: Users                  # Nombre del servicio ECS
   ECS_CLUSTER: Credibanco                    # Nombre del clúster ECS
   ECS_TASK_DEFINITION: ecs-task-def.json     # Ruta al task definition en el repo
-  CONTAINER_NAME: credibanco-cards-service   # Nombre del contenedor en el task definition
+  CONTAINER_NAME: users   # Nombre del contenedor en el task definition
 
 jobs:
   build-deploy:

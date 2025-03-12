@@ -1,5 +1,5 @@
 {
-  "family": "Cards",
+  "family": "Users",
   "networkMode": "awsvpc",
   "executionRoleArn": "arn:aws:iam::725914487651:role/CredibancoEcs",
   "containerDefinitions": [
@@ -19,7 +19,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/credibanco-cards-service",
+          "awslogs-group": "/ecs/Users",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
