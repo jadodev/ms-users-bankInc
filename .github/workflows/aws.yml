@@ -10,7 +10,7 @@ env:
   ECS_SERVICE: Users                  # Nombre del servicio ECS
   ECS_CLUSTER: Credibanco                    # Nombre del clúster ECS
   ECS_TASK_DEFINITION: ecs-task-def.json     # Ruta al task definition en el repo
-  CONTAINER_NAME: users   # Nombre del contenedor en el task definition
+  CONTAINER_NAME: Users   # Nombre del contenedor en el task definition
 
 jobs:
   build-deploy:

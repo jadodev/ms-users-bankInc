@@ -4,7 +4,7 @@
   "executionRoleArn": "arn:aws:iam::725914487651:role/CredibancoEcs",
   "containerDefinitions": [
     {
-      "name": "credibanco-cards-service",
+      "name": "users",
       "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/users:${IMAGE_TAG}",
       "essential": true,
       "portMappings": [
