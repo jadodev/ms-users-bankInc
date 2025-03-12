@@ -2,7 +2,7 @@
 FROM openjdk:17-jdk-slim
 
 # Copia el archivo JAR generado al contenedor
-COPY build/libs/mi-aplicacion-*.jar /app/mi-aplicacion.jar
+COPY build/libs/ms-users-*.jar /app/mi-aplicacion.jar
 
 # Expón el puerto 8081 (o el que necesites)
 EXPOSE 8081
