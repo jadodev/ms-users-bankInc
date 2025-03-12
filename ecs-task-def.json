@@ -5,12 +5,12 @@
   "containerDefinitions": [
     {
       "name": "credibanco-cards-service",
-      "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/credibanco-cards-service:${IMAGE_TAG}",
+      "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/users:${IMAGE_TAG}",
       "essential": true,
       "portMappings": [
         {
-          "containerPort": 8080,
-          "hostPort": 8080,
+          "containerPort": 8081,
+          "hostPort": 8081,
           "protocol": "tcp"
         }
       ],
