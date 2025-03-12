@@ -4,9 +4,11 @@ import com.jonathan.ms_users.application.dto.UserDto;
 import com.jonathan.ms_users.application.mapper.UserMapper;
 import com.jonathan.ms_users.domain.entity.User;
 import com.jonathan.ms_users.domain.service.UserServiceDomain;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class UserServiceApplication {
     private final UserServiceDomain userServiceDomain;
 
@@ -22,6 +24,15 @@ public class UserServiceApplication {
 
     public Optional<UserDto> getById(long id){
         Optional<User> user = userServiceDomain.getUserById(id);
+        if (user.isPresent()){
+            return Optional.of(UserMapper.toDto(user.get()));
+        }else {
+            throw new RuntimeException("Usuario no encontrado");
+        }
+    }
+
+    public Optional<UserDto> getUserByUserName (String username){
+        Optional<User> user = userServiceDomain.getUserByUsername(username);
         if (user.isPresent()){
             return Optional.of(UserMapper.toDto(user.get()));
         }else {

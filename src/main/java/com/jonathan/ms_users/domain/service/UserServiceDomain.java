@@ -17,11 +17,16 @@ public class UserServiceDomain implements UserInterfacePortIn {
 
     @Override
     public User create(User user) {
-        return null;
+        return userInterfacePortOut.save(user);
     }
 
     @Override
     public Optional<User> getUserById(long id) {
-        return Optional.empty();
+        return userInterfacePortOut.getUserById(id);
+    }
+
+    @Override
+    public Optional<User> getUserByUsername(String username) {
+        return userInterfacePortOut.getUserByUsername(username);
     }
 }

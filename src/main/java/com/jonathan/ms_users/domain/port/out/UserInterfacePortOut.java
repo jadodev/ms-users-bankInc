@@ -7,4 +7,6 @@ import java.util.Optional;
 public interface UserInterfacePortOut {
     User save(User user);
     Optional<User> getUserById(long id);
+    Optional<User>getUserByUsername(String username);
+
 }

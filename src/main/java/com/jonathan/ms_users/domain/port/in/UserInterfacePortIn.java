@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface UserInterfacePortIn {
     User create(User user);
     Optional<User>getUserById(long id);
+    Optional<User>getUserByUsername(String username);
 }
