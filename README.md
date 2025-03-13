@@ -86,21 +86,36 @@ Para ejecutar el proyecto localmente, puedes utilizar Docker. A continuación, s
    ```bash
    git clone https://github.com/jadodev/ms-users-bankInc.git
    cd ms-users-bankInc
+  ``
+2. **Configura el archivo application.properties:
+
+   ```bash
+    spring.datasource.url=jdbc:mysql://localhost:3306/users_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+    spring.datasource.username=root
+    spring.datasource.password=root
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.show-sql=true
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+    server.port=8081
+  ```
+3. **Levanta una instancia de MySQL con Docker:
+  ```bash
+    docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=users_db -p 3306:3306 mysql:8.0
+  ```
+4. **Construye la imagen de Docker para el micros:
+
+  ```bash
+    docker build -t ms-users .
+  ```
+5. **Ejecuta el contenedor para iniciar el microservicio:
+
+  ```bash
+    docker run -p 8081:8081 --env-file .env ms-users
   ```
 
+### Una vez que el contenedor esté en ejecución, puedes acceder al microservicio en:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**http://localhost:8081
